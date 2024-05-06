@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <title>Kalandjáték Üdvözlés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,6 +12,11 @@
             background: url(istockphoto-1440208683-640_adpp_is.mp4);
             padding-top: 50px;
         }
+
+        .container {
+            animation: slide-up 1.5s;
+        }
+
         .container {
             margin: auto;
             padding: 20px;
@@ -20,16 +27,18 @@
         }
 
         .video-background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* A videó kitölti a képernyőt */
-            z-index: -1;  /* Legalacsonyabb rétegben */
+            object-fit: cover;
+            /* A videó kitölti a képernyőt */
+            z-index: -1;
+            /* Legalacsonyabb rétegben */
         }
 
-    
+
         .button {
             background-color: #007bff;
             color: white;
@@ -38,12 +47,101 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
         }
+
         .button:hover {
             background-color: #0056b3;
+            transform: scale(1.5);
+            background-color: #0056b3;
+        }
+
+        .animated-text {
+            animation: fade-in 2s ease-in-out;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .facebook-icon {
+            text-decoration: none;
+            /* Eltávolítja az aláhúzást */
+            color: #1877F2;
+            /* Facebook kék szín */
+            font-size: 24px;
+            /* Ikon méret */
+            transition: color 0.3s;
+            /* Lassan változó szín az egérmozgatásnál */
+        }
+
+        .facebook-icon:hover {
+            color: #0d47a1;
+            /* Sötétebb kék szín az egér fölött */
+        }
+
+        #abovefoot{
+            font-family: "Poetsen One", sans-serif;
+            font-size: 18px;
+            position: fixed; 
+            bottom: 40px; 
+            right: 50%;
+            transform: translateX(50%); 
+            padding: 10px;
+        }        
+
+        footer{
+            font-family: "Poetsen One", sans-serif;
+            font-size: 20px;
+            position: fixed; 
+            bottom: 10px; 
+            right: 50%;
+            transform: translateX(50%); 
+            padding: 10px;
+        }
+
+
+        .typewriter {
+            display: inline-block;
+            white-space: nowrap; 
+            overflow: hidden;
+            border-right: 2px solid; /* Az írógép kurzora */
+            animation: blink 0.5s step-end infinite alternate; /* Pislogó kurzor */
+        }
+
+        @keyframes blink {
+            from { border-color: transparent; }
+            to { border-color: black; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Üdvözlünk a Kalandjátékban!</h1>
@@ -51,16 +149,19 @@
         <button class="button" onclick="goNext()">Tovább</button>
     </div>
 
+
+    <p id="abovefoot" class="animated-text">Készítette:
+        <footer>
+            <span id="typewriter-text" class="typewriter"></span>
+        </footer>
+    
+    
+
     <video class="video-background" autoplay muted loop>
-        <source src="video/istockphoto-1440208683-640_adpp_is.mp4" type="video/mp4">
+        <source src="video/mixkit-northern-lights-of-blue-and-green-colors-in-the-night-4038.mp4" type="video/mp4">
         A videó lejátszása nem támogatott.
     </video>
-
-    <script>
-        function goNext() {
-            
-            window.location.href = 'kezdolap.html';  // Ez helyettesíthető a valódi céloldallal.
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
+
 </html>

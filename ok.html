@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Typewriter Effect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        footer {
+            position: fixed; 
+            bottom: 10px; 
+            right: 50%; 
+            transform: translateX(50%);
+            padding: 10px;
+        }
+
+        .typewriter {
+            display: inline-block;
+            white-space: nowrap; 
+            overflow: hidden;
+            border-right: 2px solid; /* Az írógép kurzora */
+            animation: blink 0.5s step-end infinite alternate; /* Pislogó kurzor */
+        }
+
+        @keyframes blink {
+            from { border-color: transparent; }
+            to { border-color: black; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+    </style>
+</head>
+<body>
+    <footer>
+        <span id="typewriter-text" class="typewriter"></span>
+    </footer>
+
+    <script>
+        const text = "Bottó Renátó Dániel | Dobos Krisztián";
+        const span = document.getElementById("typewriter-text");
+
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                span.textContent += text[index];
+                index++;
+                setTimeout(typeEffect, 100); // 100ms késleltetés karakterenként
+            }
+        }
+
+        typeEffect(); // Indítsd el az animációt
+    </script>
+</body>
+</html>
