@@ -99,12 +99,30 @@
         }
 
 
-        .typewriter {
+        #typewriter {
             display: inline-block;
             white-space: nowrap; 
             overflow: hidden;
             border-right: 2px solid; /* Az írógép kurzora */
             animation: blink 0.5s step-end infinite alternate; /* Pislogó kurzor */
+        }
+
+        #typewriter-text {
+            cursor: pointer;
+        }
+
+        #typewriter::before{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0d47a1;
+            transition: width 0.3s ease-out;
+        }
+
+        #typewriter:hover::before{
+            width: 100%;
         }
 
         @keyframes blink {
@@ -154,9 +172,6 @@
         <footer>
             <span id="typewriter-text" class="typewriter"></span>
         </footer>
-    
-    
-
     <video class="video-background" autoplay muted loop>
         <source src="video/mixkit-northern-lights-of-blue-and-green-colors-in-the-night-4038.mp4" type="video/mp4">
         A videó lejátszása nem támogatott.
