@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+a{
+    padding: 10px;   
+    border-radius: 10px;
+    font-family: "Reddit Sans", sans-serif;
+    color: black;
+    background-color:darkorange;
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+}
+
+a:active{
+    color: white;
+}

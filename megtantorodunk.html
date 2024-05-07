@@ -4,6 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Megtántorodunk</title>
+    <style>
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* A videó kitölti a képernyőt */
+            z-index: -1;  /* Legalacsonyabb rétegben */
+        }
+
+        .link1{
+            background-color: rgba(43, 50, 57, 0.413);
+            color: white;
+            text-decoration: none;
+            padding: 10px 200px 0px 200px;
+            border-radius: 20px;
+            font-family: "Reddit Sans", sans-serif;
+            position: fixed;}
+
+        .link2 {
+            margin-top: 30px;
+            background-color: rgba(35, 50, 57, 0.413);
+            color: white;
+            text-decoration: none;
+            padding: 10px 200px 0px 200px;
+            border-radius: 20px;
+            font-family: "Reddit Sans", sans-serif;
+            position: fixed;
+            right: 20px
+        }
+        
+        a{
+    display: inline-block;  /* Gombként viselkedjen */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;  /* Átmenetek */
+}
+
+        a:hover{
+            color: white;
+            transform: scale(1.1) rotate(1deg);  /* Méret növekedés és kis forgatás */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);  /* Árnyék hozzáadása */
+        }
+
+        a:active{
+            color: green;
+            text-decoration:underline ;}
+
+    img{
+        border-radius: 10% 25%;
+        margin-left: 20px;
+        border: 5px rgb(7, 7, 76) solid;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        max-height: 400px;
+    }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -11,10 +69,15 @@
 <body>
     <div>
     <p>Visszafelé uton egy misztikus állattal találkoztunk, Kael félelmében gondolkodni nem tudott, de két lehetőség jutott eszébe:</p>
-    <img src="img/AdobeStock_554696706_Preview.jpeg" class="mythicanimal" alt="Misztikus állat" title="Misztikus állat"> <br>
-<a href="futunk.html">Elfut</a> <br>
-<a href="kavics.html">Kaviccsal megdobálja</a>
 </div>
+    <img src="img/AdobeStock_554696706_Preview.jpeg" alt="Misztikus állat" title="Misztikus állat"> <br>
+<a class="link1" href="futunk.html">Elfut</a> <br>
+<a class="link2" href="kavics.html">Kaviccsal megdobálja</a>
+
+<video class="video-background" autoplay muted loop>
+    <source src="video/mythicanimal.mp4" type="video/mp4">
+    A videó lejátszása nem támogatott.
+</video>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

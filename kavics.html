@@ -4,6 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kavics</title>
+    <style>
+        body{
+            background-image: url(img/wallpaperflare.com_wallpaper.jpg);
+            background-repeat: no-repeat;
+            background-position: bottoms;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        img{
+            max-height:350px ;
+            max-width: 350px;
+            border-radius: 25% 10%;
+            padding-left: 20px;
+        }
+
+        @keyframes bounce {
+    0%, 100% { transform: translateY(0); }  /* Kezdő és végső pozíció */
+    25% { transform: translateY(-20px); }  /* Lebegés felfelé */
+    50% { transform: translateY(0); }  /* Visszatérés az alaphelyzetbe */
+    75% { transform: translateY(-20px); }  /* Újabb lebegés */
+}
+
+
+        h2 {
+            position: absolute;
+    top: 70%;  /* Függőleges pozicionálás */
+    left: 1150px;  /* Vízszintes pozicionálás */
+    transform: translateY(-50%);  /* Függőleges középre hozás */
+    text-align: center;
+    color: white;  /* Szöveg színe */
+    background: rgba(0, 0, 0, 0.5);  /* Átlátszó háttér */
+    padding: 10px 20px;  /* Párnázás a szöveg körül */
+    border-radius: 10px;  /* Lekerekített sarkok */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Szöveg-árnyék */
+    animation: bounce 2s linear 3;
+        }
+
+        h2:hover {
+    transform: translateY(-90%);  /* Enyhe lebegő hatás hover esetén */
+}
+
+a{
+    position: absolute;
+    top: 80%;  /* Függőleges pozicionálás */
+    left: 200px;  /* Vízszintes pozicionálás */
+    transform: translateY(-50%);  /* Függőleges középre hozás */
+    background: darkgreen;  /* Alap háttérszín */
+    padding: 10px 20px;  /* Párnázás */
+    border-radius: 10px;  /* Lekerekített sarkok */
+    display: inline-block;  /* Gombként viselkedjen */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;  /* Átmenetek */
+}
+
+a:hover {
+    background: #0056b3;  /* Háttérszín változás */
+    transform: scale(1.1) rotate(5deg);  /* Méret növekedés és kis forgatás */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);  /* Árnyék hozzáadása */
+}
+
+a:active {
+    transform: translateY(0);  /* Eltűnik a lebegő hatás kattintáskor */
+}
+        
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -11,9 +76,11 @@
 <body>
     <div>
     <p>Kael kavicsokkal dobálta a szörnyet, de nem volt hatásos és a szörny haragában felfalta Kael-t.</p>
-    <h2>MEGHALTÁL!</h2>
-    <a href="kezdolap.html">Újrakezdés</a>
 </div>
+<img src="img/tumblr_nc3xwrJjdb1qhw3weo1_640.jpg" width="200px" height="200px" alt="">
+<h2>MEGHALTÁL!</h2>
+    <a href="kezdolap.html">Újrakezdés</a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
