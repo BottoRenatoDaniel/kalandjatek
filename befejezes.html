@@ -2,20 +2,98 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Befejzés</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <title>Befejezés - Animáció</title>
+    <style>
+        body {
+            background-image: url('img/empire.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;  /* A teljes magasságot kitölti */
+            margin: 0;
+        }
+
+        img {
+            max-height: 350px;
+            max-width: 350px;
+            border-radius: 25% 10%;
+            padding-left: 20px;
+        }
+
+        @keyframes h1Animation {
+            0% {
+                opacity: 0;  /* Kezdetben láthatatlan */
+                transform: translateY(100px);  /* Kezdő pozíció (alulról felé) */
+            }
+            100% {
+                opacity: 1;  /* Teljes láthatóság */
+                transform: translateY(0);  /* Vissza az eredeti pozícióba */
+            }
+        }
+
+        h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);  /* Középre igazítás */
+            font-size: 3em;  /* Betűméret */
+            color: white;  /* Szövegszín */
+            background: rgba(0, 0, 0, 0.5);  /* Átlátszó háttér */
+            padding: 20px;  /* Párnázás */
+            border-radius: 10px;  /* Lekerekített sarkok */
+            animation: h1Animation 2s ease-in-out;  /* Az animáció futása */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Szöveg árnyék */
+        }
+
+        p {
+            color: white;
+            background: rgba(0, 0, 0, 0.7);  /* Sötét háttér */
+            padding: 10px;
+            border-radius: 10px;  /* Lekerekített sarkok */
+            white-space: pre-wrap;  /* Többsoros szöveg */
+        }
+
+        a {
+            position: absolute;
+            top: 80%; 
+            left: 200px; 
+            background: darkgreen; 
+            padding: 10px 20px; 
+            border-radius: 10px; 
+            display: inline-block;  
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;  
+        }
+
+        a:hover {
+            background: #0056b3;  
+            transform: scale(1.1) rotate(5deg);  
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);  
+        }
+
+        a:active {
+            transform: translateY(0);  
+        }
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
     <div>
-    <p>Kael elindult a kristály felé, szíveben a megfogadott esküvel, hogy megvédje az Ezer Tornyos Birodalmat a gonosz hatalmaitól. Hajnalra, mikor az első sugarak feljöttek a hegyek mögül, a kristály ragyogni kezdett, és az egész birodalom új életet kapott az ősi varázserőtől. Kael, a bátor kalandor, hősiesen teljesítette küldetését, és a birodalom népe hálával és tisztelettel tekintett rá, mint az új hajnal hősjét.</p>
-    <p>Kael, a hős felébresztette a birodalmat.</p>
-    <h1>THE END!</h1>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        <p>Kael elindult a kristály felé, szíveben a megfogadott esküvel, hogy megvédje az Ezer Tornyos Birodalmat a gonosz hatalmaitól. Hajnalra, mikor az első sugarak feljöttek a hegyek mögül, a kristály ragyogni kezdett, és az egész birodalom új életet kapott az ősi varázserőtől. Kael, a bátor kalandor, hősiesen teljesítette küldetését, és a birodalom népe hálával és tisztelettel tekintett rá, mint az új hajnal hőse.</p>
+        <p>Kael, a hős felébresztette a birodalmat.</p>
+    </div>
+
+    <h1>THE END!</h1>  <!-- A központi cím animációval -->
+
+
 </body>
 </html>
